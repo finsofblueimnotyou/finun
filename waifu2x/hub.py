@@ -1,7 +1,6 @@
 from os import path
 import torch
 from .utils import Waifu2x
-from .download_models import main as download_main
 from nunif.utils import pil_io
 import PIL
 
@@ -167,7 +166,6 @@ def waifu2x(model_type="art",
             method=None, noise_level=-1,
             device_ids=[-1], tile_size=None, batch_size=None, keep_alpha=True, amp=True,
             **kwargs):
-    download_main()
     return Waifu2xImageModel(
         model_type=model_type,
         method=method, noise_level=noise_level,
